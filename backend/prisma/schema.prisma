@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── User ────────────────────────────────────────────────────────────────────
+model User {
+  id            String        @id @default(cuid())
+  walletAddress String        @unique
+  username      String?
+  bio           String?
+  avatarUrl     String?
+  nonce         String?       // used for sign-in challenge
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  transactions  Transaction[]
+
+  @@map("users")
+}
+
+// ─── Transaction ─────────────────────────────────────────────────────────────
+model Transaction {
+  id        String   @id @default(cuid())
+  txHash    String   @unique
+  from      String
+  to        String
+  value     String   // stored as string to avoid float precision issues
+  network   String
+  chainId   Int
+  status    String   @default("pending")  // pending | success | failed
+  gasUsed   String?
+  blockNumber Int?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([from])
+  @@index([txHash])
+  @@map("transactions")
+}

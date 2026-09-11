@@ -1,0 +1,316 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x5c99387c7AA8406d8904758d1A16c1e015BfdFa7",
+      "txHash": "0xc5621ec32e996eff14172706d0fe03dde649ce8dcc89e6382aafcea3ad2b48a5",
+      "kind": "uups"
+    },
+    {
+      "address": "0xcA2D3654606Fd7aA55F605f4158Bc6cCcb8F4a0B",
+      "txHash": "0x53ad2bfaf2ee7b1e10c09ecf6f14c7f982f41605daa53229a41ee5c4f3c2f735",
+      "kind": "uups"
+    },
+    {
+      "address": "0xb38371e163d39AFb1526B0427bE50e354F3faD67",
+      "txHash": "0x6487645c3fa8175a570001b4c5da36aeaaff438b7edda1f3ca39667fab0126b6",
+      "kind": "uups"
+    },
+    {
+      "address": "0xC83310599201E464dA3C401A8CbA253904A227e5",
+      "txHash": "0x0b1d6aa9dd4d747dc5392bf06e27a01630e9b9c2f30eeadd804046f6af0fc617",
+      "kind": "uups"
+    },
+    {
+      "address": "0xA1f44E76de6327971B10Ed3BF0327B4bbC204718",
+      "txHash": "0xb60fd441d67dc22c725706aaefa2125c82071e4cc4664f8cd19bc42a8638bd0d",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "a83b422b8d2ff77a70cdb9090ee9cf4eb8f8f907c6ffced7ae5958e2cfcd22e4": {
+      "address": "0xBd2c466968D102eCa0DD0D3FFd43abB5CbF56e76",
+      "txHash": "0x64cb4ce47dab00ee232fd3640aa3d9e9564baaed48e0f2d5146058fdc8b116d6",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "admin",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:482"
+          },
+          {
+            "label": "manager",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:482"
+          },
+          {
+            "label": "allCampaigns",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:484"
+          },
+          {
+            "label": "hubToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_contract(HubToken)2766",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:485"
+          },
+          {
+            "label": "campaignByReferral",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_string_memory_ptr,t_address)",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:485"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)311_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(HubToken)2766": {
+            "label": "contract HubToken",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_string_memory_ptr,t_address)": {
+            "label": "mapping(string => address)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "9f2f3478f269d249e1c0711eb3304317b80033568b5b35b3034b6ed258a32f94": {
+      "address": "0x4CEfcB8B249465d5A144b95Eb432a7baA9E0E897",
+      "txHash": "0xc117bd9cbca30254154c505f77655dba594c139ebcb553d8c9b92befa4de46ae",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "admin",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:481"
+          },
+          {
+            "label": "manager",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:481"
+          },
+          {
+            "label": "allCampaigns",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:483"
+          },
+          {
+            "label": "hubToken",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_contract(HubToken)2756",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:484"
+          },
+          {
+            "label": "campaignByReferral",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_string_memory_ptr,t_address)",
+            "contract": "CampaignFactory",
+            "src": "contracts\\CampaignMarketplace.sol:484"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)311_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(HubToken)2756": {
+            "label": "contract HubToken",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_string_memory_ptr,t_address)": {
+            "label": "mapping(string => address)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

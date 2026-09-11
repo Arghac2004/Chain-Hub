@@ -1,0 +1,701 @@
+/* ══════════════════════════════════════════════════════════════════
+   EXLM / CHAINHUB P2P ORDERS CRYPTO DASHBOARD
+   Exact replication of Taras Migulko's Dribbble Design
+   Ultra Dark Obsidian Palette (#0B0C10) · Glass Charcoal Cards (#14161F)
+   Crisp High-Contrast White Typography · Emerald & Gold Accents
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Container Layout ── */
+.p2p-exlm-root {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  background: var(--bg-base);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+  gap: 12px;
+  width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   1. LEFT SIDEBAR (EXLM / ChainHub Navigation)
+   ══════════════════════════════════════════════════════════════════ */
+.p2p-exlm-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  padding: 20px 14px;
+  box-shadow: var(--shadow-sm);
+  margin-left: 0;
+}
+
+@media (max-width: 900px) {
+  .p2p-exlm-sidebar {
+    display: none;
+  }
+}
+
+.p2p-exlm-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 24px 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.p2p-exlm-logo-text {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.p2p-exlm-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.p2p-exlm-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.p2p-exlm-nav-item:hover {
+  background: var(--bg-surface-3);
+  color: var(--ink);
+}
+
+.p2p-exlm-nav-item.active {
+  background: var(--bg-surface-3);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.p2p-nav-dot-active {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  margin-left: auto;
+}
+
+/* Bottom User Card in Sidebar */
+
+.p2p-exlm-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  background: var(--bg-surface-3);
+  border: 1px solid var(--border);
+}
+
+.p2p-exlm-user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.p2p-exlm-user-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.p2p-exlm-user-id {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   2. MAIN P2P CENTER SECTION
+   ══════════════════════════════════════════════════════════════════ */
+.p2p-exlm-center {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Top Sub-Navigation (All Assets, Markets, Trade, Tools, More) */
+.p2p-top-subnav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: 12px;
+}
+
+.p2p-subnav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.p2p-subnav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.p2p-subnav-link:hover,
+.p2p-subnav-link.active {
+  color: var(--ink);
+}
+
+.p2p-subnav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink-muted);
+}
+
+.p2p-subnav-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.p2p-subnav-icon-btn:hover {
+  color: var(--ink);
+  background: var(--bg-surface-3);
+}
+
+/* ── Filter Bar 1: Mode Tabs + Asset Tabs + Balance ── */
+.p2p-filter-bar-one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 12px 18px;
+}
+
+.p2p-mode-pill-group {
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.p2p-mode-pill {
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.p2p-mode-pill.active {
+  background: var(--bg-surface);
+  color: var(--ink);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.p2p-asset-pill-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.p2p-asset-btn {
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s;
+}
+
+.p2p-asset-btn.active {
+  background: var(--bg-surface-3);
+  border-color: var(--border);
+  color: var(--ink);
+}
+
+.p2p-filter-right-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.p2p-balance-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ink);
+  background: var(--bg-surface-3);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+
+/* ── Filter Bar 2: Buy/Sell Dropdown + Payment Dropdown + Price ── */
+.p2p-filter-bar-two {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.p2p-filter-left-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.p2p-dropdown-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+}
+
+.p2p-dropdown-pill:focus {
+  border-color: var(--brand);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   3. P2P CENTRAL DATA TABLE (Exact Dribbble Look)
+   ══════════════════════════════════════════════════════════════════ */
+.p2p-dribbble-table-wrap {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.p2p-dribbble-header-row {
+  display: grid;
+  grid-template-columns: 2.2fr 1.3fr 1.8fr 1.5fr 1.3fr 1.1fr;
+  padding: 14px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+@media (max-width: 960px) {
+  .p2p-dribbble-header-row {
+    display: none;
+  }
+}
+
+.p2p-dribbble-row-container {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease;
+}
+
+.p2p-dribbble-row-container:hover {
+  background: var(--bg-surface-2);
+}
+
+.p2p-dribbble-row-container.active-expanded {
+  background: #11131c;
+  border-bottom-color: var(--border-2);
+}
+
+.p2p-dribbble-row {
+  display: grid;
+  grid-template-columns: 2.2fr 1.3fr 1.8fr 1.5fr 1.3fr 1.1fr;
+  padding: 16px 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 960px) {
+  .p2p-dribbble-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px;
+  }
+}
+
+/* Column: User/Type */
+.p2p-col-type-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.p2p-user-hex-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3730a3, #5b21b6);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.p2p-user-details-wrap {
+  min-width: 0;
+}
+
+.p2p-user-handle {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.p2p-user-perf-subtext {
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin-top: 1px;
+}
+
+/* Column: Price */
+.p2p-col-price-val {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ink);
+}
+
+/* Column: Available / Order Limit */
+.p2p-col-limits-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p2p-avail-crypto {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.p2p-limit-fiat {
+  font-size: 11px;
+  color: var(--ink-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Column: Bank */
+.p2p-col-bank-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p2p-bank-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.p2p-bank-sub {
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+/* Column: Rating */
+.p2p-col-rating-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p2p-orders-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.p2p-completion-percent {
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+/* Column: Trade Action Button */
+.p2p-col-action-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.p2p-btn-action-buy-pill {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.p2p-btn-action-buy-pill:hover {
+  background: #e2e8f0;
+  transform: scale(1.02);
+}
+
+.p2p-btn-action-buy-pill.expanded {
+  background: var(--bg-surface-3);
+  color: var(--ink);
+  border: 1px solid var(--border-2);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   4. EXACT EXPANDED ACCORDION ROW (Dribbble Showcase)
+   ══════════════════════════════════════════════════════════════════ */
+.p2p-expanded-accordion-panel {
+  padding: 20px 24px;
+  background: #0f1118;
+  border-top: 1px solid var(--border);
+  animation: fadeInDown 0.2s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.p2p-accordion-2col-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 860px) {
+  .p2p-accordion-2col-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Left: Verification Badges + Advertiser's Terms */
+.p2p-accordion-left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.p2p-verification-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.p2p-v-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
+.p2p-terms-title-heading {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+}
+
+.p2p-terms-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.p2p-terms-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+/* Right: Order Entry Inputs ("You Pay" + "Converted to") */
+.p2p-accordion-right-form {
+  background: #141722;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p2p-calc-entry-box {
+  background: #0d0e14;
+  border: 1px solid var(--border-2);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p2p-calc-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.p2p-calc-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.p2p-calc-input {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  outline: none;
+  font-family: 'JetBrains Mono', monospace;
+  width: 70%;
+}
+
+.p2p-calc-currency-tag {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink-muted);
+}
+
+.p2p-calc-price-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--ink-muted);
+  padding: 2px 4px;
+}
+
+.p2p-btn-execute-buy {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.p2p-btn-execute-buy:hover {
+  background: #059669;
+}
+.p2p-myads-card:hover {
+  border-color: var(--border-2);
+}
+
+.p2p-escrow-order-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}

@@ -1,0 +1,553 @@
+
+
+/* ── Container & Header ── */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 16px;
+}
+
+.dashboard-header {
+  margin-bottom: 2px;
+}
+
+.dashboard-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.dashboard-subtitle {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin: 4px 0 0 0;
+}
+
+/* ── Main 2-Column Grid Layout ── */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 360px 1fr;
+  }
+}
+
+.dashboard-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── User Profile Card ── */
+.dashboard-profile-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.15s ease;
+}
+
+.dashboard-profile-card:hover {
+  border-color: var(--border-2);
+}
+
+.dashboard-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-profile-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+}
+
+.dashboard-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 800;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.35));
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  color: #fbbf24;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.dashboard-profile-body {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dashboard-profile-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.dashboard-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-user-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.dashboard-edit-icon-btn {
+  padding: 4px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  color: var(--ink-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.dashboard-edit-icon-btn:hover {
+  background: var(--bg-surface-3);
+  color: var(--brand);
+}
+
+.dashboard-name-edit-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.dashboard-name-edit-input {
+  background: var(--bg-surface-3);
+  border: 1px solid var(--border-2);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  outline: none;
+  width: 130px;
+}
+
+.dashboard-name-edit-input:focus {
+  border-color: var(--brand);
+}
+
+.dashboard-join-date {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin: 2px 0 0 0;
+}
+
+.dashboard-merchant-tag {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--brand);
+  margin: 2px 0 0 0;
+}
+
+/* ── Profile Level & Progress ── */
+.dashboard-level-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.dashboard-level-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dashboard-level-label {
+  color: var(--ink-muted);
+}
+
+.dashboard-level-xp {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.dashboard-level-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  overflow: hidden;
+  background-color: var(--bg-surface-3);
+}
+
+.dashboard-level-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Account Metrics Mini Grid ── */
+.dashboard-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.dashboard-trust-cell {
+  padding: 8px 4px;
+  border-radius: var(--radius);
+  background-color: var(--bg-surface-3);
+}
+
+.dashboard-trust-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-muted);
+  margin: 0 0 2px 0;
+}
+
+.dashboard-trust-val {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* ── Metrics Grid (Right Column Top) ── */
+.dashboard-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .dashboard-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .dashboard-metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.dashboard-metric-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.15s ease;
+}
+
+.dashboard-metric-card:hover {
+  border-color: var(--border-2);
+}
+
+.dashboard-portfolio-span2 {
+  grid-column: span 1;
+}
+
+@media (min-width: 640px) {
+  .dashboard-portfolio-span2 {
+    grid-column: span 2;
+  }
+}
+
+.dashboard-metric-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.dashboard-metric-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+}
+
+.dashboard-metric-val-large {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--brand);
+  margin: 4px 0 0 0;
+}
+
+/* ── Protocol Status Cell ── */
+.dashboard-status-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.dashboard-status-indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.dashboard-status-pulse {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background-color: rgba(16, 185, 129, 0.2);
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.dashboard-status-dot {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background-color: #10b981;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+}
+
+.dashboard-status-text-active {
+  font-size: 13px;
+  font-weight: 800;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.dashboard-status-subtext {
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin: 2px 0 0 0;
+}
+
+/* ── Supported Networks Card ── */
+.dashboard-networks-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard-networks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .dashboard-networks-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.dashboard-network-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface-3);
+  color: var(--ink);
+  transition: all 0.15s ease;
+}
+
+.dashboard-network-pill.active {
+  background-color: var(--bg-surface);
+  border-color: var(--border-2);
+}
+
+.dashboard-network-pill:hover {
+  border-color: var(--brand-bd);
+}
+
+.dashboard-network-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+/* ── Recent Transactions Table Card ── */
+.dashboard-tx-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-tx-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-tx-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+}
+
+.dashboard-tx-desc {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin: 2px 0 0 0;
+}
+
+.dashboard-tx-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.dashboard-tx-link:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+/* ── Table Container ── */
+.dashboard-table-wrap {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.dashboard-table {
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  border-collapse: collapse;
+}
+
+.dashboard-table thead tr {
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-muted);
+}
+
+.dashboard-table th {
+  padding-bottom: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dashboard-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.12s ease;
+}
+
+.dashboard-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.dashboard-table tbody tr:hover {
+  background-color: var(--bg-surface-3);
+}
+
+.dashboard-table td {
+  padding: 12px 0;
+}
+
+.dashboard-tx-type {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.dashboard-token-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.dashboard-tx-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.dashboard-tx-counterparty {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ink-muted);
+}
+
+.dashboard-tx-hash-link {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.dashboard-tx-hash-link:hover {
+  text-decoration: underline;
+}
+
+.dashboard-tx-time {
+  text-align: right;
+  color: var(--ink-muted);
+}
+

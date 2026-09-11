@@ -1,0 +1,17 @@
+node_modules/
+*/node_modules/
+**/node_modules/
+.env
+.env.local
+.env.*.local
+dist/
+*/dist/
+**/dist/
+artifacts/
+cache/
+typechain/
+typechain-types/
+coverage/
+.DS_Store
+.system_generated/
+

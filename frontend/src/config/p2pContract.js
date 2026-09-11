@@ -1,0 +1,232 @@
+// Ethereum Sepolia P2P Contract Address   
+export const P2P_CONTRACT_ADDRESS = '0xB0C7AE3F267aAa4bCDCfcA9388ED7aE4259D2541'
+
+// Sepolia HUB / Token Address
+export const HUB_TOKEN_ADDRESS = '0xFcEeEC79e9B5eBa627B1260Fba3469C10d3dD64f'
+export const USDT_TOKEN_ADDRESS = '0x7169D38820dfd117C3FA1f22a697dBA58d90BA06'
+
+export const ERC20_ABI = [
+  {
+    inputs: [
+      { internalType: 'address', name: 'spender', type: 'address' },
+      { internalType: 'uint256', name: 'amount', type: 'uint256' },
+    ],
+    name: 'approve',
+    outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'address', name: 'account', type: 'address' }],
+    name: 'balanceOf',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+]
+                                                                                                             
+export const P2P_ABI = [
+  {
+    inputs: [
+      { internalType: 'uint256', name: '_totalQuantity', type: 'uint256' },
+      { internalType: 'uint256', name: '_min', type: 'uint256' },
+      { internalType: 'uint256', name: '_max', type: 'uint256' },
+      { internalType: 'uint256', name: '_price', type: 'uint256' },
+      { internalType: 'uint256', name: '_pairIndex', type: 'uint256' },
+      { internalType: 'uint256', name: '_type', type: 'uint256' },
+      { internalType: 'string', name: '_local', type: 'string' },
+    ],
+    name: 'createOrder',
+    outputs: [],
+    stateMutability: 'payable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'uint256', name: '_orderId', type: 'uint256' },
+      { internalType: 'uint256', name: '_amount', type: 'uint256' },
+      { internalType: 'string', name: 'code', type: 'string' },
+    ],
+    name: 'buyOrder',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: '_buyOrderId', type: 'uint256' }],
+    name: 'confirmPayment',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: '_buyorderId', type: 'uint256' }],
+    name: 'releaseFunds',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'uint256', name: 'buyOrderId', type: 'uint256' },
+      { internalType: 'string', name: '_reason', type: 'string' },
+    ],
+    name: 'raiseDispute',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: 'disputeId', type: 'uint256' }],
+    name: 'refundToBuyer',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: 'disputeId', type: 'uint256' }],
+    name: 'refundToseller',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    name: 'orderInfo',
+    outputs: [
+      { internalType: 'uint256', name: 'orderID', type: 'uint256' },
+      { internalType: 'uint256', name: 'pair', type: 'uint256' },
+      { internalType: 'uint256', name: 'totalQuantity', type: 'uint256' },
+      { internalType: 'uint256', name: 'min', type: 'uint256' },
+      { internalType: 'uint256', name: 'max', type: 'uint256' },
+      { internalType: 'uint256', name: 'status', type: 'uint256' },
+      { internalType: 'uint256', name: 'price', type: 'uint256' },
+      { internalType: 'address', name: 'userAddress', type: 'address' },
+      { internalType: 'uint256', name: 'creationTime', type: 'uint256' },
+      { internalType: 'uint256', name: '_type', type: 'uint256' },
+      { internalType: 'uint256', name: 'country', type: 'uint256' },
+      { internalType: 'bool', name: 'buyStatus', type: 'bool' },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    name: 'buyOrderInfo',
+    outputs: [
+      { internalType: 'uint256', name: 'buyOrderID', type: 'uint256' },
+      { internalType: 'uint256', name: 'mainOrderID', type: 'uint256' },
+      { internalType: 'uint256', name: 'amount', type: 'uint256' },
+      { internalType: 'uint256', name: 'pair', type: 'uint256' },
+      { internalType: 'uint256', name: 'status', type: 'uint256' },
+      { internalType: 'uint256', name: 'createtime', type: 'uint256' },
+      { internalType: 'uint256', name: 'expiretime', type: 'uint256' },
+      { internalType: 'uint256', name: 'price', type: 'uint256' },
+      { internalType: 'string', name: 'bankTransferCode', type: 'string' },
+      { internalType: 'address', name: 'userAddress', type: 'address' },
+      { internalType: 'address', name: 'seller', type: 'address' },
+      { internalType: 'uint256', name: 'completedTime', type: 'uint256' },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'totalOrders',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'totalBuyOrders',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'address', name: '_user', type: 'address' }],
+    name: 'getUserData',
+    outputs: [
+      { internalType: 'uint256', name: '_countryID', type: 'uint256' },
+      { internalType: 'bool', name: '_kycStatus', type: 'bool' },
+      { internalType: 'string', name: '_kycID', type: 'string' },
+      { internalType: 'uint256', name: '_ordersLength', type: 'uint256' },
+      { internalType: 'uint256', name: '_createordersLength', type: 'uint256' },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: 'index', type: 'uint256' }],
+    name: 'getDisputeids',
+    outputs: [{ internalType: 'uint256', name: '_count', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    name: 'disputeinfo',
+    outputs: [
+      { internalType: 'uint256', name: 'mainOrderId', type: 'uint256' },
+      { internalType: 'uint256', name: 'buyOrderId', type: 'uint256' },
+      { internalType: 'string', name: 'reason', type: 'string' },
+      { internalType: 'address', name: 'approvedAdmin', type: 'address' },
+      { internalType: 'uint256', name: 'status', type: 'uint256' },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'address', name: '_user', type: 'address' },
+      { internalType: 'string', name: '_kycid', type: 'string' },
+      { internalType: 'uint256', name: '_countryId', type: 'uint256' },
+    ],
+    name: 'setUser',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'admin',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'address', name: '_user', type: 'address' },
+      { internalType: 'uint256', name: '_index', type: 'uint256' },
+    ],
+    name: 'getOrderIDs',
+    outputs: [{ internalType: 'uint256', name: 'id', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'address', name: '_user', type: 'address' },
+      { internalType: 'uint256', name: '_index', type: 'uint256' },
+    ],
+    name: 'getcreateOrderIDs',
+    outputs: [{ internalType: 'uint256', name: 'id', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'address', name: '_creator', type: 'address' },
+      { internalType: 'address', name: '_admin', type: 'address' },
+      { internalType: 'address', name: '_token1', type: 'address' },
+      { internalType: 'address', name: '_token2', type: 'address' },
+      { internalType: 'address', name: '_token3', type: 'address' },
+      { internalType: 'address', name: '_masterContract', type: 'address' },
+    ],
+    name: 'start',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+]

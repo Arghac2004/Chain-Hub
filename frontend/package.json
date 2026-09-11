@@ -1,0 +1,40 @@
+{
+  "name": "blockchain-platform-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reown/appkit": "^1.6.8",
+    "@reown/appkit-adapter-wagmi": "^1.6.8",
+    "@tanstack/react-query": "^5.62.7",
+    "axios": "^1.7.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.2",
+    "viem": "^2.21.54",
+    "wagmi": "^2.14.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "dotenv": "^17.4.2",
+    "hardhat": "^3.14.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.5"
+  },
+  "allowScripts": {
+    "@reown/appkit@1.8.23": true,
+    "@reown/appkit@1.7.8": true,
+    "bufferutil@4.1.0": true,
+    "esbuild@0.25.12": true,
+    "keccak@3.0.4": true,
+    "utf-8-validate@5.0.10": true
+  }
+}
