@@ -1,6 +1,11 @@
 
 import { execSync, spawnSync } from 'child_process'
 
+// If running in Linux/Docker, skip port killing
+if (process.platform !== 'win32') {
+  process.exit(0)
+}
+
 const PORT  = process.env.PORT ?? 5000
 const WAIT  = 500   
 const RETRY = 5    
